@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080909">
+<meta name="description" content="PULSEN — Move With Intent. Streetwear nacido en Costa Rica para quienes viven la música, el movimiento y la comunidad.">
+<title>PULSEN — Move With Intent</title>
+<style>
+:root{--bg:#080909;--surface:#0f1010;--surface2:#151616;--text:#f4f4ef;--muted:#9b9e99;--acid:#d8ff18;--line:#272a28;--danger:#ff5f5f;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+body.lock{overflow:hidden}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+.topbar{background:var(--acid);color:#070807;text-align:center;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;padding:10px 14px}
+.header{position:sticky;top:0;z-index:50;background:rgba(8,9,9,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{max-width:var(--max);height:74px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:950;letter-spacing:.22em;font-size:20px}.navlinks{display:flex;gap:28px;font-size:12px;text-transform:uppercase;letter-spacing:.13em}.navlinks a{opacity:.8}.navlinks a:hover{opacity:1;color:var(--acid)}
+.actions{display:flex;gap:8px}.iconbtn{width:42px;height:42px;border:1px solid var(--line);background:transparent;color:var(--text);border-radius:50%;display:grid;place-items:center}.iconbtn:hover{border-color:var(--acid);color:var(--acid)}
+.menu{display:none}
+.container{max-width:var(--max);margin:auto;padding:0 24px}
+.hero{min-height:calc(100vh - 116px);display:grid;align-items:center;overflow:hidden;background:radial-gradient(circle at 76% 40%,rgba(216,255,24,.11),transparent 28%),radial-gradient(circle at 20% 70%,rgba(255,255,255,.04),transparent 28%)}
+.heroGrid{display:grid;grid-template-columns:1.02fr .98fr;gap:55px;align-items:center;padding:80px 0}.eyebrow{font-size:11px;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:var(--acid)}h1{font-size:clamp(62px,9vw,132px);line-height:.79;letter-spacing:-.075em;margin:22px 0 28px;font-weight:950}.lead{max-width:590px;color:#bfc2bd;line-height:1.75;font-size:17px}.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{border:1px solid var(--line);background:transparent;color:var(--text);padding:15px 21px;text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:900}.btn.primary{background:var(--acid);color:#080909;border-color:var(--acid)}.btn:hover{transform:translateY(-2px)}.heroVisual{position:relative;min-height:600px;border:1px solid var(--line);background:linear-gradient(145deg,#151716,#080909);display:grid;place-items:center;overflow:hidden}.heroVisual:before{content:"";position:absolute;width:470px;height:470px;border:1px solid rgba(216,255,24,.3);border-radius:50%;box-shadow:0 0 0 70px rgba(216,255,24,.02),0 0 0 140px rgba(216,255,24,.018)}.heroVisual img{width:62%;max-width:420px;position:relative;z-index:2;filter:drop-shadow(0 30px 35px rgba(0,0,0,.5));transform:rotate(-5deg)}.stamp{position:absolute;right:25px;bottom:22px;color:#666;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.section{padding:105px 0;border-top:1px solid var(--line)}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:36px}.sectionHead h2{font-size:clamp(36px,5vw,64px);letter-spacing:-.055em;line-height:.95;margin:10px 0 0}.muted{color:var(--muted)}.collectionGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.product{background:var(--surface);border:1px solid var(--line);padding:12px;transition:.25s}.product:hover{transform:translateY(-5px);border-color:#444}.productMedia{aspect-ratio:1/1.08;background:#121313;display:grid;place-items:center;overflow:hidden}.productMedia img{width:90%;height:90%;object-fit:contain}.productInfo{padding:16px 5px 7px}.productRow{display:flex;justify-content:space-between;gap:12px}.product h3{margin:0 0 6px;font-size:18px}.price{color:var(--acid);font-weight:900}.tag{font-size:10px;color:#777;text-transform:uppercase;letter-spacing:.14em}.product .quick{width:100%;margin-top:16px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}.filter{border:1px solid var(--line);background:transparent;color:#aaa;padding:9px 13px;font-size:11px;text-transform:uppercase;letter-spacing:.12em}.filter.active,.filter:hover{background:var(--acid);color:#080909;border-color:var(--acid)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.manifesto{font-size:clamp(38px,6vw,82px);line-height:.96;letter-spacing:-.06em;margin:0}.manifesto em{color:var(--acid);font-style:normal}.copy{color:#b9bcb7;line-height:1.9}.numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}.number{border-top:1px solid var(--line);padding-top:14px}.number strong{font-size:28px}.number span{display:block;color:#777;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--acid);color:#080909;padding:18px 0;overflow:hidden;white-space:nowrap;font-weight:950;letter-spacing:.15em;text-transform:uppercase}.ticker{display:inline-block;animation:move 18s linear infinite}@keyframes move{to{transform:translateX(-50%)}}
+.journal{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.journalCard{min-height:360px;border:1px solid var(--line);background:linear-gradient(145deg,#161817,#0b0c0c);padding:28px;display:flex;flex-direction:column;justify-content:end}.journalCard h3{font-size:32px;letter-spacing:-.04em;margin:10px 0}.journalCard.small{min-height:172px}.journalStack{display:grid;gap:16px}
+.newsletter{background:linear-gradient(135deg,#151716,#0b0c0c);border:1px solid var(--line);padding:60px;text-align:center}.newsletter h2{font-size:clamp(36px,5vw,62px);margin:10px 0}.form{max-width:600px;margin:25px auto 0;display:flex;gap:8px}.form input{min-width:0;flex:1;background:#080909;border:1px solid #333;color:#fff;padding:16px}.fine{font-size:11px;color:#777;margin-top:14px}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq details{background:var(--surface);border:1px solid var(--line);padding:18px}.faq summary{cursor:pointer;font-weight:800}.faq p{color:#aaa;line-height:1.7}
+.footer{border-top:1px solid var(--line);padding:50px 0}.footerGrid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:30px}.footer h4{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#777}.footer a{display:block;margin:10px 0;color:#aaa;font-size:13px}.footerBottom{border-top:1px solid var(--line);margin-top:40px;padding-top:18px;display:flex;justify-content:space-between;color:#666;font-size:11px}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:80;opacity:0;pointer-events:none;transition:.2s}.overlay.show{opacity:1;pointer-events:auto}.drawer{position:fixed;z-index:90;top:0;right:0;width:min(470px,100%);height:100dvh;background:#0b0c0c;border-left:1px solid var(--line);transform:translateX(100%);transition:.28s;display:flex;flex-direction:column}.drawer.show{transform:none}.drawerHead{padding:22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.drawerBody{padding:20px;overflow:auto;flex:1}.cartItem{display:grid;grid-template-columns:75px 1fr auto;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:14px 0}.cartThumb{width:75px;height:85px;background:#151616}.cartThumb img{width:100%;height:100%;object-fit:contain}.qty{display:flex;align-items:center;gap:10px;margin-top:8px}.qty button{width:25px;height:25px;border:1px solid #444;background:transparent;color:#fff}.drawerFoot{padding:20px;border-top:1px solid var(--line)}.total{display:flex;justify-content:space-between;font-size:20px;font-weight:900;margin-bottom:15px}.full{width:100%}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.78);display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:.2s}.modal.show{opacity:1;pointer-events:auto}.modalBox{background:#0d0e0e;border:1px solid #333;width:min(900px,100%);max-height:90dvh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;position:relative}.modalMedia{background:#141515;min-height:500px;display:grid;place-items:center}.modalMedia img{width:85%;height:85%;object-fit:contain}.modalInfo{padding:35px}.close{position:absolute;right:14px;top:14px;width:38px;height:38px;border-radius:50%;background:#111;border:1px solid #444;color:#fff}.sizeGrid{display:flex;gap:7px;margin:20px 0}.size{width:45px;height:40px;border:1px solid #444;background:transparent;color:#fff}.size.selected,.size:hover{border-color:var(--acid);background:var(--acid);color:#080909}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);background:#f4f4ef;color:#080909;padding:13px 18px;font-weight:800;z-index:120;opacity:0;pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.navlinks{display:none}.menu{display:grid}.heroGrid,.story,.journal{grid-template-columns:1fr}.heroVisual{min-height:500px}.collectionGrid{grid-template-columns:repeat(2,1fr)}.footerGrid{grid-template-columns:1fr 1fr}.faq{grid-template-columns:1fr}.modalBox{grid-template-columns:1fr}.modalMedia{min-height:320px}}
+@media(max-width:560px){.container{padding:0 17px}.nav{padding:0 17px}.heroGrid{padding:55px 0}.heroVisual{min-height:420px}.collectionGrid{grid-template-columns:1fr}.section{padding:75px 0}.newsletter{padding:38px 20px}.form{flex-direction:column}.footerGrid{grid-template-columns:1fr}.footerBottom{display:block}.footerBottom span{display:block;margin-top:8px}.actions .searchBtn{display:none}}
+</style>
+</head>
+<body>
+<div class="topbar">DROP 001 · FIRST FREQUENCY — ENVÍO A TODO COSTA RICA</div>
+<header class="header">
+  <nav class="nav">
+    <button class="iconbtn menu" onclick="toggleMenu()" aria-label="Menú">☰</button>
+    <a class="brand" href="#home">PULSEN</a>
+    <div class="navlinks"><a href="#shop">Tienda</a><a href="#story">Historia</a><a href="#journal">Journal</a><a href="#faq">FAQ</a></div>
+    <div class="actions">
+      <button class="iconbtn searchBtn" onclick="focusSearch()" aria-label="Buscar">⌕</button>
+      <button class="iconbtn" onclick="openCart()" aria-label="Carrito">🛒<span id="cartCount">0</span></button>
+    </div>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero"><div class="container heroGrid">
+  <div><div class="eyebrow">Costa Rica · Est. 2026</div><h1>MOVE<br>WITH<br>INTENT.</h1>
+  <p class="lead">PULSEN es streetwear nacido de la música, el movimiento y la energía de la gente que no se queda quieta. Diseños limpios, actitud nocturna y drops pequeños para construir algo que se sienta propio.</p>
+  <div class="btns"><a class="btn primary" href="#shop">Comprar Drop 001</a><a class="btn" href="#story">Conocer PULSEN</a></div></div>
+  <div class="heroVisual"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNjgwIj48cmVjdCB3aWR0aD0iNDIwIiBoZWlnaHQ9IjY4MCIgcng9IjIyIiBmaWxsPSIjMTExIi8+PHBhdGggZD0iTTExNSAyMzUgUTIxMCAxODUgMzA1IDIzNSBMMzUwIDI4NSBMMzE1IDMyNSBMMjg1IDI5NSBMMjg1IDYxMCBMMTM1IDYxMCBMMTM1IDI5NSBMMTA1IDMyNSBMNzAgMjg1IFoiIGZpbGw9IiMwYjBiMGIiIHN0cm9rZT0iIzMwMzAzMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHRleHQgeD0iMjEwIiB5PSI0MjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNEOEZGMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCIgbGV0dGVyLXNwYWNpbmc9IjUiPlBVTFNFTjwvdGV4dD48dGV4dCB4PSIyMTAiIHk9IjQ1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2U4ZThlOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBsZXR0ZXItc3BhY2luZz0iMyI+TU9WRSBXSVRIIElOVEVOVDwvdGV4dD48L3N2Zz4=" alt="PULSEN Wave Tee"><div class="stamp">CR / 001 · FIRST FREQUENCY</div></div>
+</div></section>
+
+<div class="banner"><div class="ticker">PULSEN · MUSIC DRIVES US FORWARD · MOVE WITH INTENT · PULSEN · MUSIC DRIVES US FORWARD · MOVE WITH INTENT · </div></div>
+
+<section class="section" id="shop"><div class="container">
+  <div class="sectionHead"><div><div class="eyebrow">DROP 001</div><h2>FIRST FREQUENCY</h2></div><div class="muted">Unisex · Edición inicial</div></div>
+  <div class="filters"><button class="filter active" data-filter="all">Todo</button><button class="filter" data-filter="tops">Prendas</button><button class="filter" data-filter="accessories">Accesorios</button></div>
+  <div class="collectionGrid" id="products"></div>
+</div></section>
+
+<section class="section" id="story"><div class="container story">
+  <div><div class="eyebrow">THE IDEA</div><p class="manifesto">No queremos hacer ropa que solo se <em>vea.</em> Queremos hacer ropa que se <em>sienta.</em></p></div>
+  <div><p class="copy">PULSEN nace en Costa Rica con una idea simple: la música mueve a las personas. El primer drop convierte esa sensación en prendas negras, gráficas de frecuencia y detalles mínimos que funcionan tanto en la calle como frente al escenario.</p><p class="copy">Empezamos pequeño a propósito. Probamos calidad, escuchamos a la comunidad y dejamos que cada drop tenga su propia historia.</p>
+  <div class="numbers"><div class="number"><strong>001</strong><span>Primer drop</span></div><div class="number"><strong>CR</strong><span>Nacido en Costa Rica</span></div><div class="number"><strong>∞</strong><span>Movimiento</span></div></div></div>
+</div></section>
+
+<section class="section" id="journal"><div class="container">
+  <div class="sectionHead"><div><div class="eyebrow">PULSEN JOURNAL</div><h2>BEHIND THE FREQUENCY</h2></div></div>
+  <div class="journal"><article class="journalCard"><div class="eyebrow">01 · ORIGIN</div><h3>De una frecuencia a una comunidad.</h3><p class="muted">Por qué nació PULSEN y qué queremos construir.</p></article>
+  <div class="journalStack"><article class="journalCard small"><div class="eyebrow">02 · DESIGN</div><h3>Black, signal, acid.</h3><p class="muted">El lenguaje visual del Drop 001.</p></article><article class="journalCard small"><div class="eyebrow">03 · CULTURE</div><h3>Music drives us forward.</h3><p class="muted">La música como punto de encuentro.</p></article></div></div>
+</div></section>
+
+<section class="section" id="community"><div class="container"><div class="newsletter"><div class="eyebrow">JOIN THE FREQUENCY</div><h2>Be first.</h2><p class="muted">Acceso anticipado a drops, colaboraciones y eventos.</p><form class="form" onsubmit="subscribe(event)"><input id="email" type="email" placeholder="tu@email.com" required><button class="btn primary" type="submit">Unirme</button></form><div class="fine">Demo: conecta este formulario a tu plataforma de email antes del lanzamiento.</div></div></div></section>
+
+<section class="section" id="faq"><div class="container"><div class="sectionHead"><div><div class="eyebrow">NEED TO KNOW</div><h2>FAQ</h2></div></div>
+<div class="faq"><details><summary>¿Qué tallas manejan?</summary><p>El Drop 001 está planteado como unisex en S, M, L y XL. Las tallas finales se confirmarán con la muestra física.</p></details><details><summary>¿Hacen envíos en Costa Rica?</summary><p>La tienda está preparada para ofrecer envíos nacionales. El método, tarifa y tiempos se conectarán cuando definamos el operador logístico.</p></details><details><summary>¿Puedo cambiar una prenda?</summary><p>La política definitiva de cambios y devoluciones se publicará antes de activar pagos reales.</p></details><details><summary>¿Los pagos ya son reales?</summary><p>No todavía. Este paquete es una tienda funcional de demostración; el checkout real requiere conectar un proveedor de pagos y un backend/servicio de pedidos.</p></details></div>
+</div></section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footerGrid"><div><div class="brand">PULSEN</div><p class="muted">Move With Intent.<br>Music Drives Us Forward.</p></div><div><h4>Shop</h4><a href="#shop">Drop 001</a><a href="#shop">Camisetas</a><a href="#shop">Hoodies</a><a href="#shop">Accesorios</a></div><div><h4>Info</h4><a href="#story">Nuestra historia</a><a href="#faq">FAQ</a><a href="#community">Newsletter</a></div><div><h4>Social</h4><a href="#" onclick="toast('Aquí conectaremos Instagram');return false">Instagram</a><a href="#" onclick="toast('Aquí conectaremos TikTok');return false">TikTok</a><a href="#" onclick="toast('Aquí conectaremos WhatsApp Business');return false">WhatsApp</a></div></div><div class="footerBottom"><span>© 2026 PULSEN · COSTA RICA</span><span>CR / 001 · FIRST FREQUENCY</span></div></div></footer>
+
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+<aside class="drawer" id="drawer"><div class="drawerHead"><strong>TU CARRITO</strong><button class="iconbtn" onclick="closeAll()">×</button></div><div class="drawerBody" id="cartItems"></div><div class="drawerFoot"><div class="total"><span>Total</span><span id="cartTotal">₡0</span></div><button class="btn primary full" onclick="checkout()">Continuar al checkout</button><p class="fine">Checkout demo. Conectaremos pagos reales antes del lanzamiento.</p></div></aside>
+
+<div class="modal" id="productModal"><div class="modalBox"><button class="close" onclick="closeProduct()">×</button><div class="modalMedia"><img id="modalImg" src="" alt=""></div><div class="modalInfo"><div class="eyebrow" id="modalTag"></div><h2 id="modalName"></h2><div class="price" id="modalPrice"></div><p class="copy" id="modalDesc"></p><strong>Talla</strong><div class="sizeGrid" id="sizes"></div><button class="btn primary full" onclick="addModal()">Agregar al carrito</button><p class="fine">En la tienda real aquí irán stock, tabla de medidas y disponibilidad.</p></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const products=[
+{id:'wave',name:'Wave Tee',price:28500,cat:'tops',tag:'01 · TEE',img:'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNjgwIj48cmVjdCB3aWR0aD0iNDIwIiBoZWlnaHQ9IjY4MCIgcng9IjIyIiBmaWxsPSIjMTExIi8+PHBhdGggZD0iTTExNSAyMzUgUTIxMCAxODUgMzA1IDIzNSBMMzUwIDI4NSBMMzE1IDMyNSBMMjg1IDI5NSBMMjg1IDYxMCBMMTM1IDYxMCBMMTM1IDI5NSBMMTA1IDMyNSBMNzAgMjg1IFoiIGZpbGw9IiMwYjBiMGIiIHN0cm9rZT0iIzMwMzAzMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHRleHQgeD0iMjEwIiB5PSI0MjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNEOEZGMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCIgbGV0dGVyLXNwYWNpbmc9IjUiPlBVTFNFTjwvdGV4dD48dGV4dCB4PSIyMTAiIHk9IjQ1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2U4ZThlOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBsZXR0ZXItc3BhY2luZz0iMyI+TU9WRSBXSVRIIElOVEVOVDwvdGV4dD48L3N2Zz4=',desc:'Camiseta oversized en negro con identidad PULSEN y gráfico de frecuencia. Algodón pesado; especificaciones finales se validarán con la muestra.'},
+{id:'hoodie',name:'Frequency Hoodie',price:42500,cat:'tops',tag:'02 · HOODIE',img:'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNTIwIj48cmVjdCB3aWR0aD0iNDIwIiBoZWlnaHQ9IjUyMCIgcng9IjIyIiBmaWxsPSIjMTExIi8+PHBhdGggZD0iTTEyMCAxMjAgUTIxMCA3MCAzMDAgMTIwIEwzNjAgMTkwIEwzMTUgMjIwIEwyOTAgMTkwIEwyODUgNDQ1IEwxMzUgNDQ1IEwxMzAgMTkwIEwxMDUgMjIwIEw2MCAxOTBaIiBmaWxsPSIjMDgwODA4IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iNSIvPjxwYXRoIGQ9Ik0xNTUgMTI1IFEyMTAgMTc1IDI2NSAxMjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIxMCIvPjx0ZXh0IHg9IjIxMCIgeT0iMjg1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRDhGRjE4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSI1Ij5GUkVRVUVOQ1k8L3RleHQ+PHRleHQgeD0iMjEwIiB5PSIzMTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNlZWUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMSIgbGV0dGVyLXNwYWNpbmc9IjQiPkRST1AgMDAxPC90ZXh0Pjwvc3ZnPg==',desc:'Hoodie heavyweight con drop shoulder y gráfica mínima. Pensado para noches largas, viajes y escenarios.'},
+{id:'cap',name:'Pulse Cap',price:18500,cat:'accessories',tag:'03 · CAP',img:'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj48cmVjdCB3aWR0aD0iNDIwIiBoZWlnaHQ9IjQyMCIgcng9IjIyIiBmaWxsPSIjMTExIi8+PHBhdGggZD0iTTEwMCAyNDUgUTExNSAxMDUgMjEwIDk1IFEzMDUgMTA1IDMyMCAyNDUgUTI3MCAyNzUgMjEwIDI3MCBRMTUwIDI3NSAxMDAgMjQ1WiIgZmlsbD0iIzA5MDkwOSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjUiLz48cGF0aCBkPSJNMjEwIDI3MCBRMzA1IDI3MCAzNjAgMzAwIFEzMDUgMzI1IDIxMCAzMTUgUTE0NSAzMDUgOTUgMjgwIFExNDUgMjcwIDIxMCAyNzBaIiBmaWxsPSIjMDgwODA4IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iNSIvPjx0ZXh0IHg9IjIxMCIgeT0iMjA1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRDhGRjE4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjgiIGZvbnQtd2VpZ2h0PSI5MDAiIGxldHRlci1zcGFjaW5nPSI1Ij5QVUxTRU48L3RleHQ+PC9zdmc+',desc:'Gorra estructurada con logo PULSEN. Un accesorio simple para llevar la frecuencia todos los días.'}
+];
+let cart=JSON.parse(localStorage.getItem('pulsenCart')||'[]');
+let selectedProduct=null, selectedSize='M';
+
+const money=n=>new Intl.NumberFormat('es-CR',{style:'currency',currency:'CRC',maximumFractionDigits:0}).format(n);
+function renderProducts(filter='all'){
+ const el=document.getElementById('products');
+ const list=filter==='all'?products:products.filter(p=>p.cat===filter);
+ el.innerHTML=list.map(p=>`<article class="product"><div class="productMedia"><img src="${p.img}" alt="${p.name}"></div><div class="productInfo"><div class="tag">${p.tag}</div><div class="productRow"><h3>${p.name}</h3><div class="price">${money(p.price)}</div></div><div class="muted" style="font-size:12px">S · M · L · XL</div><button class="btn quick" onclick="openProduct('${p.id}')">Ver producto</button></div></article>`).join('');
+}
+function openProduct(id){
+ selectedProduct=products.find(p=>p.id===id);selectedSize='M';
+ document.getElementById('modalImg').src=selectedProduct.img;document.getElementById('modalImg').alt=selectedProduct.name;
+ document.getElementById('modalTag').textContent=selectedProduct.tag;document.getElementById('modalName').textContent=selectedProduct.name;
+ document.getElementById('modalPrice').textContent=money(selectedProduct.price);document.getElementById('modalDesc').textContent=selectedProduct.desc;
+ document.getElementById('sizes').innerHTML=['S','M','L','XL'].map(s=>`<button class="size ${s==='M'?'selected':''}" onclick="selectSize('${s}',this)">${s}</button>`).join('');
+ document.getElementById('productModal').classList.add('show');document.body.classList.add('lock');
+}
+function selectSize(s,el){selectedSize=s;document.querySelectorAll('.size').forEach(x=>x.classList.remove('selected'));el.classList.add('selected')}
+function addModal(){addToCart(selectedProduct.id,selectedSize);closeProduct();openCart();toast('Producto agregado al carrito')}
+function addToCart(id,size='M'){const p=products.find(x=>x.id===id);const existing=cart.find(x=>x.id===id&&x.size===size);if(existing)existing.qty++;else cart.push({id,size,qty:1});saveCart()}
+function saveCart(){localStorage.setItem('pulsenCart',JSON.stringify(cart));renderCart();document.getElementById('cartCount').textContent=cart.reduce((a,x)=>a+x.qty,0)}
+function renderCart(){const el=document.getElementById('cartItems');if(!cart.length){el.innerHTML='<div style="padding:60px 10px;text-align:center;color:#777">Tu carrito está vacío.<br><br>El próximo drop puede empezar aquí.</div>';document.getElementById('cartTotal').textContent=money(0);return}
+let total=0;el.innerHTML=cart.map((item,i)=>{const p=products.find(x=>x.id===item.id);total+=p.price*item.qty;return `<div class="cartItem"><div class="cartThumb"><img src="${p.img}" alt=""></div><div><strong>${p.name}</strong><div class="muted">Talla ${item.size} · ${money(p.price)}</div><div class="qty"><button onclick="changeQty(${i},-1)">−</button><span>${item.qty}</span><button onclick="changeQty(${i},1)">+</button></div></div><button class="iconbtn" onclick="removeItem(${i})">×</button></div>`}).join('');document.getElementById('cartTotal').textContent=money(total)}
+function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);saveCart()}
+function removeItem(i){cart.splice(i,1);saveCart()}
+function openCart(){renderCart();document.getElementById('overlay').classList.add('show');document.getElementById('drawer').classList.add('show');document.body.classList.add('lock')}
+function closeProduct(){document.getElementById('productModal').classList.remove('show');document.body.classList.remove('lock')}
+function closeAll(){document.getElementById('overlay').classList.remove('show');document.getElementById('drawer').classList.remove('show');document.body.classList.remove('lock')}
+function checkout(){if(!cart.length){toast('Tu carrito está vacío');return}toast('Checkout demo: falta conectar pagos y pedidos reales')}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
+function subscribe(e){e.preventDefault();toast('¡Listo! Demo: conecta el formulario a tu plataforma de email.');e.target.reset()}
+function focusSearch(){const q=prompt('¿Qué producto buscas?');if(q)toast('Búsqueda demo: '+q)}
+function toggleMenu(){const links=document.querySelector('.navlinks');links.style.display=links.style.display==='flex'?'':'flex';links.style.position='absolute';links.style.top='74px';links.style.left='0';links.style.right='0';links.style.background='#080909';links.style.padding='20px';links.style.flexDirection='column';links.style.borderBottom='1px solid #272a28'}
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderProducts(b.dataset.filter)}));
+renderProducts();saveCart();
+</script>
+</body>
+</html>
