@@ -566,17 +566,75 @@ img{display:block;max-width:100%}
 .authPanel{width:min(560px,calc(100% - 28px))}.authTabs{display:flex;gap:8px;margin-bottom:20px}.authTabs .filter{flex:1}.authForm{display:grid;gap:12px}.textBtn{background:none;border:0;color:var(--muted);font-size:10px;letter-spacing:.12em;font-weight:900;cursor:pointer;text-align:center;padding:10px}.textBtn:hover{color:var(--acid)}.authGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.accountHero{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}.accountAvatar{width:58px;height:58px;border:1px solid var(--acid);display:grid;place-items:center;font-size:26px;font-weight:900;color:var(--acid)}.accountHero h2{margin:4px 0;font-size:25px}.accountHero p{margin:0;color:var(--muted);word-break:break-all}.accountActions{display:flex;gap:10px;margin-top:16px}.accountActions .btn{flex:1}.checkoutPanel{width:min(720px,calc(100% - 28px))}.checkoutSummary{border:1px solid var(--line);padding:14px;margin-bottom:16px;background:#0b0d0d}.checkoutLine{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:13px}.checkoutTotal{border-top:1px solid var(--line);margin-top:8px;padding-top:10px;font-weight:900}.checkoutForm{display:grid;gap:12px}.adminQuickPanel{width:min(420px,calc(100% - 28px))}.adminHint{font-size:10px;color:#666;line-height:1.5;margin-top:10px}.orderCard{border:1px solid var(--line);padding:14px;background:#0b0d0d}.orderCard + .orderCard{margin-top:10px}.orderTop{display:flex;justify-content:space-between;gap:10px}.statusPill{font-size:9px;letter-spacing:.12em;border:1px solid var(--line);padding:5px 7px;color:var(--acid)}
 @media(max-width:600px){.authGrid{grid-template-columns:1fr}.accountActions{flex-direction:column}.adminCorner{right:8px;bottom:8px}.checkoutPanel,.authPanel{width:calc(100% - 20px)}}
 </style>
+<style>
+/* ===== V5 RADIO MOBILE + ACCOUNT ADDRESS OVERRIDES ===== */
+.radioDock{
+  box-sizing:border-box !important;
+  width:min(500px,calc(100vw - 20px)) !important;
+  max-width:calc(100vw - 20px) !important;
+  min-width:0 !important;
+}
+.radioDock .radioVideo{
+  position:relative !important;
+  width:92px !important;
+  height:58px !important;
+  flex:0 0 92px !important;
+  overflow:hidden !important;
+  border-radius:9px !important;
+  background:#000 !important;
+}
+.radioDock .radioVideo #ytPlayer{
+  width:200px !important;
+  height:200px !important;
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%,-50%) !important;
+}
+.radioDock .radioInfo{min-width:0 !important;overflow:hidden !important}
+.radioDock .radioControls{min-width:0 !important;flex-wrap:nowrap !important;overflow:hidden !important}
+.radioDock .radioControl{flex:0 0 30px !important;width:30px !important;height:28px !important}
+.radioDock .radioVolume{flex:1 1 70px !important;width:auto !important;min-width:55px !important;max-width:90px !important}
+.radioDock .radioClose{flex:0 0 26px !important;width:26px !important;margin-left:0 !important}
+.radioDock .radioExternal{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;display:block}
+.radioTapHint{display:none;font-size:9px;letter-spacing:.08em;color:var(--acid);font-weight:900;margin-top:4px}
+.radioDock.needsGesture .radioTapHint{display:block}
+@media(max-width:600px){
+  .radioDock{
+    left:50% !important;right:auto !important;top:auto !important;bottom:10px !important;
+    transform:translateX(-50%) !important;
+    width:calc(100vw - 16px) !important;max-width:calc(100vw - 16px) !important;
+    padding:8px !important;gap:7px !important;border-radius:14px !important;
+  }
+  .radioDock .radioVideo{width:76px !important;height:52px !important;flex-basis:76px !important}
+  .radioDock .radioKicker{font-size:7px !important;letter-spacing:.09em !important}
+  .radioDock .radioNow{font-size:10px !important;max-width:100% !important}
+  .radioDock .radioControls{gap:4px !important}
+  .radioDock .radioControl{width:28px !important;height:27px !important;flex-basis:28px !important;font-size:12px !important}
+  .radioDock .radioVolume{min-width:42px !important;max-width:58px !important;flex-basis:58px !important}
+  .radioDock .radioClose{width:24px !important;flex-basis:24px !important}
+  .radioDock .radioExternal{font-size:7px !important;margin-top:4px !important}
+  .radioDock.mini{left:10px !important;right:auto !important;top:auto !important;bottom:12px !important;transform:none !important;width:56px !important;max-width:56px !important;height:56px !important;min-height:56px !important}
+}
+@media(max-width:360px){
+  .radioDock{gap:5px !important;padding:7px !important}
+  .radioDock .radioVideo{width:64px !important;height:48px !important;flex-basis:64px !important}
+  .radioDock .radioControl{width:26px !important;height:26px !important;flex-basis:26px !important}
+  .radioDock .radioVolume{min-width:38px !important;max-width:48px !important;flex-basis:48px !important}
+  .radioDock .radioClose{width:22px !important;flex-basis:22px !important}
+}
+</style>
 </head>
 <body>
 
 </div>
 
 <div class="radioDock" id="radioDock" title="PULSEN RADIO — tocar para abrir">
-  <div class="radioVideo"><div id="ytPlayer"></div></div>
+  <div class="radioVideo" aria-label="PULSEN Radio"><div id="ytPlayer"></div></div>
   <div class="radioInfo">
     <div class="radioKicker">PULSEN RADIO · YOUR FREQUENCY</div>
     <div class="radioNow" id="radioNow">PULSEN RADIO · FIRST FREQUENCY</div>
-    <a id="radioExternal" class="radioExternal" href="https://music.youtube.com/playlist?list=PLaCDA3HZ5tZ__aQ3jTFa3aIVb1nkEWB9g" target="_blank" rel="noopener">ABRIR YOUTUBE MUSIC ↗</a>
+    <a id="radioExternal" class="radioExternal" href="https://music.youtube.com/playlist?list=PLaCDA3HZ5tZ__aQ3jTFa3aIVb1nkEWB9g" target="_blank" rel="noopener">ABRIR YOUTUBE MUSIC ↗</a><div id="radioTapHint" class="radioTapHint">TOCA ▶ PARA ACTIVAR EL AUDIO</div>
     <div class="radioControls">
       <button type="button" class="radioControl" onclick="radioPrev()" aria-label="Anterior">‹‹</button>
       <button type="button" class="radioControl" id="radioPlay" onclick="radioToggle()" aria-label="Play/Pause">▶</button>
@@ -979,6 +1037,8 @@ img{display:block;max-width:100%}
       </form>
       <form id="customerRegisterForm" onsubmit="customerRegister(event)" class="authForm" style="display:none">
         <div class="authGrid"><div class="field"><label>Nombre</label><input id="registerName" maxlength="80" required placeholder="Tu nombre"></div><div class="field"><label>Teléfono</label><input id="registerPhone" maxlength="30" placeholder="+506..."></div></div>
+        <div class="field"><label>Dirección de envío</label><textarea id="registerAddress" maxlength="300" required placeholder="Provincia, cantón, distrito, señas y referencia..."></textarea></div>
+        <div class="field checkline"><label style="display:flex;align-items:center;gap:8px"><input id="registerMarketing" type="checkbox"> Quiero recibir novedades y promociones de PULSEN</label></div>
         <div class="field"><label>Correo</label><input id="registerEmail" type="email" autocomplete="email" required placeholder="tu@email.com"></div>
         <div class="field"><label>Contraseña</label><input id="registerPassword" type="password" minlength="8" autocomplete="new-password" required placeholder="Mínimo 8 caracteres"></div>
         <button class="btn full" type="submit">CREAR MI CUENTA</button>
@@ -1070,23 +1130,44 @@ window.onYouTubeIframeAPIReady = function(){
 
 function createRadioPlayer(){
   if(radioPlayer || !radioReady)return;
+  const origin=(location.protocol==='http:'||location.protocol==='https:')?location.origin:'https://cabm162-cell.github.io';
   radioPlayer=new YT.Player("ytPlayer",{
-    width:"100%",height:"100%",
-    playerVars:{listType:"playlist",list:RADIO_PLAYLIST_ID,playsinline:1,controls:0,autoplay:1,rel:0,enablejsapi:1,origin:window.location.origin},
+    width:"200",height:"200",
+    playerVars:{listType:"playlist",list:RADIO_PLAYLIST_ID,playsinline:1,controls:0,autoplay:1,rel:0,enablejsapi:1,origin:origin,iv_load_policy:3},
     events:{
-      onReady:function(e){e.target.setVolume(Number(document.getElementById("radioVolume").value||65));e.target.playVideo();updateRadioUI("PLAYING");},
+      onReady:function(e){
+        const frame=e.target.getIframe();
+        if(frame){
+          frame.setAttribute('allow','autoplay; encrypted-media; picture-in-picture');
+          frame.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+        }
+        e.target.setVolume(Number(document.getElementById("radioVolume").value||65));
+        // First attempt is allowed to autoplay. If the browser blocks it,
+        // onAutoplayBlocked changes the UI and the user's tap will retry.
+        try{e.target.playVideo();}catch(err){}
+      },
       onStateChange:function(e){
-        if(e.data===YT.PlayerState.PLAYING){radioAutoplayBlocked=false;updateRadioUI("PLAYING")}
-        else if(e.data===YT.PlayerState.PAUSED)updateRadioUI("PAUSED");
-        else if(e.data===YT.PlayerState.ENDED)updateRadioUI("ENDED");
+        if(e.data===YT.PlayerState.PLAYING){
+          radioAutoplayBlocked=false;
+          document.getElementById('radioDock').classList.remove('needsGesture');
+          updateRadioUI("PLAYING");
+        }else if(e.data===YT.PlayerState.PAUSED){updateRadioUI("PAUSED");}
+        else if(e.data===YT.PlayerState.ENDED){updateRadioUI("ENDED");}
       },
       onAutoplayBlocked:function(){
         radioAutoplayBlocked=true;
-        const d=document.getElementById("radioDock");d.classList.add("show");d.classList.remove("mini");
-        document.getElementById("radioNow").textContent="TOCA ▶ PARA ACTIVAR EL AUDIO";
+        const d=document.getElementById("radioDock");
+        d.classList.add("show","needsGesture");
+        d.classList.remove("mini");
+        document.getElementById("radioNow").textContent="AUDIO BLOQUEADO POR EL NAVEGADOR";
         document.getElementById("radioPlay").textContent="▶";
       },
-      onError:function(e){console.warn("PULSEN YouTube error",e.data);document.getElementById("radioNow").textContent="ABRE YOUTUBE MUSIC PARA ESCUCHAR";}
+      onError:function(e){
+        console.warn("PULSEN YouTube error",e.data);
+        const n=document.getElementById("radioNow");
+        if(e.data===153)n.textContent="ACTIVA YOUTUBE DESDE EL NAVEGADOR";
+        else n.textContent="ABRE YOUTUBE MUSIC PARA ESCUCHAR";
+      }
     }
   });
 }
@@ -1095,20 +1176,19 @@ function startRadio(){
   dock.classList.add("show");
   radioStarted=true;
 
-  // Si ya existe el reproductor, una nueva pulsación debe intentar reproducirlo.
   if(radioPlayer){
     try{
       radioPlayer.unMute();
       radioMuted=false;
       radioPlayer.playVideo();
-      radioAutoplayBlocked=false;
-      updateRadioUI("PLAYING");
+      document.getElementById('radioNow').textContent='PULSEN RADIO · ACTIVANDO…';
     }catch(e){}
     return;
   }
 
-  if(radioReady) createRadioPlayer();
-  else{
+  if(radioReady){
+    createRadioPlayer();
+  }else{
     document.getElementById("radioNow").textContent="PULSEN RADIO · CARGANDO…";
     const wait=setInterval(()=>{
       if(radioReady){clearInterval(wait);createRadioPlayer();}
@@ -1116,7 +1196,7 @@ function startRadio(){
     setTimeout(()=>clearInterval(wait),10000);
   }
 
-  // Solo minimizar si realmente empezó a reproducir.
+  // Never minimize unless YouTube really reports PLAYING.
   setTimeout(()=>{
     if(radioPlayer && !radioAutoplayBlocked){
       try{
@@ -1152,7 +1232,6 @@ function updateRadioUI(state){
 }
 
 function radioToggle(){
-  // El botón debe servir también como desbloqueo manual del audio.
   if(!radioPlayer){
     radioAutoplayBlocked=false;
     startRadio();
@@ -1167,8 +1246,8 @@ function radioToggle(){
       radioAutoplayBlocked=false;
       radioPlayer.unMute();
       radioMuted=false;
+      document.getElementById('radioNow').textContent='PULSEN RADIO · ACTIVANDO…';
       radioPlayer.playVideo();
-      updateRadioUI("PLAYING");
     }
   }catch(e){}
 }
@@ -1197,8 +1276,15 @@ function autoStartRadio(){
 function unlockRadioOnFirstInteraction(){
   const unlock=()=>{
     if(radioPlayer && radioAutoplayBlocked){
-      try{radioPlayer.unMute();radioPlayer.playVideo();radioAutoplayBlocked=false;updateRadioUI("PLAYING")}catch(e){}
+      try{
+        radioAutoplayBlocked=false;
+        radioPlayer.unMute();
+        radioPlayer.playVideo();
+        document.getElementById('radioNow').textContent='PULSEN RADIO · ACTIVANDO…';
+      }catch(e){}
     }
+    // Keep listeners alive until playback actually succeeds; remove them only
+    // after a real user gesture has been used to retry playback.
     window.removeEventListener("pointerdown",unlock,true);
     window.removeEventListener("touchstart",unlock,true);
     window.removeEventListener("keydown",unlock,true);
@@ -1207,7 +1293,6 @@ function unlockRadioOnFirstInteraction(){
   window.addEventListener("touchstart",unlock,true);
   window.addEventListener("keydown",unlock,true);
 }
-
 function setupRadioDrag(){
   const dock=document.getElementById("radioDock");
   let dragging=false,moved=false,suppressClick=false,startX=0,startY=0,origLeft=0,origTop=0;
@@ -1770,11 +1855,23 @@ async function customerLogin(e){
   setAuthStatus('authStatus',''); refreshAuthUI();
 }
 async function customerRegister(e){
-  e.preventDefault(); if(!backendConfigured()){setAuthStatus('authStatus','Primero conecta Supabase para activar las cuentas.',true);return}
-  const c=getAuthClient(); const name=document.getElementById('registerName').value.trim(); const phone=document.getElementById('registerPhone').value.trim(); const email=document.getElementById('registerEmail').value.trim().toLowerCase(); const password=document.getElementById('registerPassword').value;
+  e.preventDefault();
+  if(!backendConfigured()){setAuthStatus('authStatus','Primero conecta Supabase para activar las cuentas.',true);return}
+  const c=getAuthClient();
+  const name=document.getElementById('registerName').value.trim();
+  const phone=document.getElementById('registerPhone').value.trim();
+  const address=document.getElementById('registerAddress').value.trim();
+  const email=document.getElementById('registerEmail').value.trim().toLowerCase();
+  const password=document.getElementById('registerPassword').value;
+  const marketing=document.getElementById('registerMarketing')?.checked||false;
+  if(!address){setAuthStatus('authStatus','Agrega una dirección de envío para poder recibir tus pedidos.',true);return}
   setAuthStatus('authStatus','Creando cuenta…');
-  const {data,error}=await c.auth.signUp({email,password,options:{data:{full_name:name,phone}}});
+  const {data,error}=await c.auth.signUp({email,password,options:{data:{full_name:name,phone,address,marketing_opt_in:marketing}}});
   if(error){setAuthStatus('authStatus',error.message||'No pudimos crear la cuenta.',true);return}
+  // If email confirmation is disabled, create/update the profile immediately.
+  if(data.user){
+    try{await c.from('profiles').upsert({id:data.user.id,full_name:name,phone,address,marketing_opt_in:marketing,updated_at:new Date().toISOString()});}catch(err){console.warn('PULSEN profile sync',err)}
+  }
   if(data.session){setAuthStatus('authStatus','Cuenta creada. ¡Bienvenido a PULSEN!');refreshAuthUI();}
   else{setAuthStatus('authStatus','Cuenta creada. Revisa tu correo para confirmar la cuenta antes de entrar.');}
 }
